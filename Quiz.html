@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/custom.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <title>EXAM-2.0</title>
+</head>
+<body onload="Load()">
+    <div class="nav">
+        <input type="checkbox" id="nav-check">
+        <div class="nav-header">
+          <div class="nav-title">
+            EXAM-2.0
+          </div>
+        </div>
+        <div class="nav-btn">
+          <label for="nav-check">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+        
+        <div class="nav-links">
+          <a href="Register.html" >Login/Register</a>
+          <a href="Quiz.html" >Quiz</a>
+        </div>
+      </div>
+    <section class="main">
+
+        <div class="container">
+            <div class="col">
+                <h3 id="questionBox">
+                    1) Lorem ipsum dolor sit amet, consectetur adipisicing elit Debitis?
+                </h3>
+            </div>
+            <div class="col box">
+                <input name="option" type="radio" id="first" value="a" required>
+                <label for="first">Testing 1</label>
+            </div>
+            <div class="col box">
+                <input name="option" type="radio" id="second" value="b" required>
+                <label for="second">Testing 2</label>
+            </div>
+            <div class="col box">
+                <input name="option" type="radio" id="third" value="c" required>
+                <label for="third">Testing 3</label>
+            </div>
+            <div class="col box">
+                <input name="option" type="radio" id="fourth" value="d" required>
+                <label for="fourth">Testing 4</label>
+            </div>
+            <div style="display: flex;gap: 15px;">
+              <button id="submit">Submit</button>
+              <button id="submit2" style="width: 100%;
+              background-color: rgb(47, 8, 73);
+              transition: 0.5s;
+              color: white;
+              outline: none;
+              border: none;
+              font-size: 25px;
+              display: block;
+              padding: 10px;
+              cursor: pointer;">Skip</button>
+            </div>
+        </div>
+
+    </section>
+    <script src="js/app.js"></script>
+</body>
+</html>

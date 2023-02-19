@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EXAM-2.0</title>
+    <link rel="stylesheet" href="Css/navbar.css" />
+  </head>
+  <body onload="LoadFunc()">
+    <div class="nav">
+      <input type="checkbox" id="nav-check" />
+      <div class="nav-header">
+        <div class="nav-title">EXAM-2.0</div>
+      </div>
+      <div class="nav-btn">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+
+      <div class="nav-links">
+        <a href="Register.html">Login/Register</a>
+        <a href="Quiz.html">Quiz</a>
+      </div>
+    </div>
+    <div style="position: fixed; top: 55%; left: 45%">
+      <button
+        style="
+          padding-left: 150%;
+          padding-right: 150%;
+          padding-top: 10%;
+          padding-bottom: 10%;
+          text-align: center;
+          background-color: brown;
+          border-radius: 10px;
+        "
+        onclick="Start()"
+      >
+        Start Quiz
+      </button>
+    </div>
+    <div id="show" style="font-size:45px;position:fixed;top:20%;left:40%;">
+      
+    </div>
+  </body>
+  <script>
+    function LoadFunc() {
+      let token = JSON.parse(localStorage.getItem("token"));
+      if (token) {
+      } else {
+        window.location.href = "Login.html";
+      }
+    }
+    function Start() {
+      window.location.href = "Quiz.html";
+    }
+    let report=JSON.parse(localStorage.getItem("Score"))
+    document.querySelector("#show").innerHTML=report.data
+
+  </script>
+</html>

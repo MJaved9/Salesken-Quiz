@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link  rel="stylesheet" href="Css/Register.css" />
+    <link  rel="stylesheet" href="Css/navbar.css" />
+</head>
+<body>
+    <div class="nav">
+        <input type="checkbox" id="nav-check">
+        <div class="nav-header">
+          <div class="nav-title">
+            EXAM-2.0
+          </div>
+        </div>
+        <div class="nav-btn">
+          <label for="nav-check">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+        
+        <div class="nav-links">
+          <a href="Register.html">Login/Register</a>
+          <a href="Quiz.html">Quiz</a>
+        </div>
+      </div>
+    <div class="login">
+        <div class="login-triangle"></div>
+        
+        <h2 class="login-header">Log in</h2>
+      
+        <form class="login-container">
+          <p><input type="email" placeholder="Email" id="email"></p>
+          <p><input type="password" placeholder="Password" id="password"></p>
+          <p><input type="submit" value="Log in" id="login"></p>
+          <p><a href="Register.html" style="text-decoration: none;">Don't have Account Register</a></p>
+        </form>
+      </div>
+</body>
+<script>
+let log=document.querySelector("#login").addEventListener("click",MyLogin)
+let data=JSON.parse(localStorage.getItem("data"))
+function MyLogin(){
+    event.preventDefault()
+    console.log(data    )
+    let email = document.querySelector("#email").value;
+      let password = document.querySelector("#password").value;
+    if(email==="") alert("Enter Email")
+    else if(password==="") alert("Enter Password")
+    else{
+        if(data.email===email && data.password===password){
+            alert("Login done....")
+            localStorage.setItem("token",JSON.stringify( Math.floor(1000 + Math.random() * 9000)))
+            window.location.href = "index.html";
+        }
+        else{
+            alert("Email or Password not matched...")
+        }
+    }
+}
+</script>
+</html>
